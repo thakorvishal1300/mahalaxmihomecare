@@ -1,0 +1,394 @@
+ :root {
+      --primary: #007bff;
+      --gradient: linear-gradient(135deg, #0072ff, #00c6ff, #7ef9ff);
+      --dark: #1c1f25;
+      --light-bg: #f8f9fc;
+      --radius: 12px;
+    }
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background-color: var(--light-bg);
+      color: #333;
+      scroll-behavior: smooth;
+      padding-top: 90px; /* ✅ Adds space below the fixed navbar */
+    }
+    .navbar {
+      background: linear-gradient(270deg, #007bff, #6f00ff, #00e0ff);
+      background-size: 600% 600%;
+      animation: gradientShift 10s ease infinite;
+    }
+
+    @keyframes gradientShift {
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+    .navbar-brand {
+      display: flex;
+      align-items: center;
+      font-weight: 700;
+      color: white !important;
+      letter-spacing: 0.5px;
+      font-size: large;
+    }
+
+    .navbar-brand img {
+      height: 80px;
+      width: 100px;
+      border-radius: 5%;
+      object-fit: cover;
+      margin-right: 10px;
+    }
+    .navbar-toggler-icon {
+      filter: invert(1);
+    }
+    .nav-link {
+      color: white !important;
+      font-weight: 500;
+      position: relative;
+      transition: all 0.3s ease;
+    }
+
+    .nav-link::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -3px;
+      width: 0%;
+      height: 2px;
+      background-color: #ffe600;
+      transition: width 0.3s;
+    }
+
+    .nav-link:hover::after {
+      width: 100%;
+    }
+     /* --- HERO + SLIDER SIDE BY SIDE --- */
+#hero-slider {
+  margin-top: 120px; /* space below navbar */
+  padding: 60px 5%;
+}
+
+.hero-content {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+  padding: 2rem;
+  backdrop-filter: blur(6px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.hero-content h1 {
+  font-weight: 700;
+  font-size: 2.2rem;
+  color: #007bff;
+}
+
+.hero-content p {
+  color: #333;
+  font-size: 1.1rem;
+  margin-top: 1rem;
+}
+
+/* --- SLIDER --- */
+#slider img {
+  object-fit: cover;
+  width: 100%;
+  height: 70vh;
+  border-radius: 12px;
+  filter: brightness(90%);
+}
+
+#slider {
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* --- Responsive --- */
+@media (max-width: 992px) {
+  #hero-slider {
+    padding: 40px 2%;
+  }
+  .hero-content {
+    text-align: center;
+  }
+  #slider img {
+    height: 45vh;
+  }
+}
+
+    /* --- SERVICES --- */
+    .services {
+      padding: 80px 0;
+    }
+
+    .service-card {
+      border: none;
+      border-radius: var(--radius);
+      overflow: hidden;
+      background: white;
+      transition: all 0.4s ease;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    .service-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    }
+
+    .service-card img {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+  display: block;
+}
+
+
+    .service-card .card-body {
+      padding: 1.5rem;
+    }
+
+    .service-card h5 {
+      color: var(--primary);
+      font-weight: 700;
+    }
+
+    .card-text {
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .btn-primary {
+  background: linear-gradient(90deg, #004cff, #003cff);
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+  background: linear-gradient(90deg, #0077ff, #0048ff);
+  transform: scale(1.05);
+}
+
+.btn-outline-secondary {
+  border-radius: 8px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.btn-outline-secondary:hover {
+  background-color: #f8f9fc;
+  transform: scale(1.05);
+}
+
+
+
+    /* --- CONTACT SECTION --- */
+.contact-section {
+  background: var(--gradient);
+  color: black;
+  margin-top: 50px;
+
+  
+  
+}
+.contact-box{
+  padding: 1.5rem;
+}
+.contact-info{
+  padding: 0.5rem;
+}
+.contact-form{
+  padding: 1.5rem;
+}
+.contact-box,
+.contact-info,
+.contact-form {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 10px;
+  backdrop-filter: blur(6px);
+  height: 100%;
+  }
+
+.contact-info h4 {
+  font-weight: 700;
+  margin-left: 0%;
+  color: black;
+  margin-bottom: 1rem;
+}
+
+.contact-info p {
+  display: flex;
+  align-items: center;
+  gap: 8px; /* space between icon and text */
+  margin: 0.6rem 0;
+  font-size: 1rem;
+  color: black;
+}
+
+.contact-info i {
+  color: #0c0b03;
+  font-size: 1.1rem;
+}
+
+/* Social Icons with Real Colors */
+/* Social Icons - white background with brand-colored icons */
+.social-icons a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  background-color: white;
+  font-size: 1.4rem;
+  margin: 0 6px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Brand icon colors */
+.social-icons a.facebook i {
+  color: #1877F2; /* Facebook Blue */
+}
+
+.social-icons a.instagram i {
+  color: #E1306C; /* Instagram Pinkish Red */
+}
+
+.social-icons a.twitter i {
+  color: #1DA1F2; /* Twitter Blue */
+}
+
+/* Hover effects */
+.social-icons a:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.4);
+}
+
+
+/* Contact Form */
+.contact-form h4 {
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.contact-form .form-control {
+  border-radius: 10px;
+  border: none;
+  padding: 0.75rem 1rem;
+}
+
+.contact-form .form-control:focus {
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.4);
+  outline: none;
+}
+
+/* Responsive Layout */
+@media (max-width: 992px) {
+  .contact-info {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+}
+/* ---------------- GALLERY STYLES ---------------- */
+    .section-title {
+      font-weight: 800;
+      font-size: 2rem;
+      color: #007bff;
+      text-align: center;
+      padding-top: 65px;
+      
+    }
+
+    .main_video {
+      width: 100%;
+      max-width: 700px;
+      margin: 0 auto;
+      display: block;
+      border-radius: 1rem;
+    }
+
+
+    .gallery-video,
+    .gallery-img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+      aspect-ratio: 1 / 1;
+      border-radius: 10px;
+      transition: 0.3s ease;
+    }
+
+    .gallery-video:hover,
+    .gallery-img:hover {
+      transform: scale(1.05);
+    }
+
+    hr {
+      margin: 40px 0;
+    }
+    /* -------ABOUT SECTIONS --------*/
+    .about-section {
+      padding: 60px 5%;
+      margin-top: 100px;
+    }
+    .about-heading {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 20px;
+    }
+    .about-box {
+      background: white;
+      padding: 30px;
+      border-radius: var(--radius);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+      margin-bottom: 40px;
+    }
+
+    /* ICON CARDS */
+    .info-card {
+      background: white;
+      padding: 25px;
+      border-radius: 14px;
+      text-align: center;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      transition: 0.3s;
+    }
+    .info-card:hover {
+      transform: translateY(-6px);
+    }
+    .info-card i {
+      font-size: 3rem;
+      color: var(--primary);
+      margin-bottom: 10px;
+    }
+
+
+    /* --- FOOTER --- */
+    .footer {
+      background: #1c1f25;
+      color: #ccc;
+      text-align: center;
+      padding: 40px 10px 20px;
+      margin-top: 50px;
+    }
+
+    .footer p {
+      margin: 0;
+      font-size: 0.95rem;
+    }
+
+    body, html {
+      padding: 0 !important;
+      margin: 0 !important;
+    }
+
+    .container,
+    .container-fluid {
+      padding-left: 0 !important;
+      padding-right: 0 !important;
+    }
